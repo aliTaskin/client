@@ -1,0 +1,35 @@
+<div style="text-align:center !important ;">
+
+    <div class="d-flex justify-content-lg-center mr-auto p-5">
+        <div class="">
+            
+                <form [formGroup]='loginForm' (ngSubmit)="login()">
+                    <h3>Login</h3>
+                    <hr />
+                    
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input formControlName='username' class="form-control" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName='password' class="form-control" />
+                        
+                    </div>
+
+                    <div class="buttons justify-end">
+                        <input type = "submit" value = "Login " class="btn btn-primary" [disabled]="loginForm.invalid">
+                      </div>
+                    
+                </form>
+           
+        </div>
+
+    </div>
+
+    <h5 *ngIf="errorMessage">
+        {{errorMessage}}
+    </h5>
+
+</div>

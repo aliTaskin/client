@@ -1,0 +1,132 @@
+
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="content ">
+
+      <form [formGroup]='movieSearchForm' (ngSubmit)="searchMovies()" >
+
+        <div class="form-group">
+    
+            Title
+            <textarea type="text"  class="form-control" formControlName='title' placeholder="Please Enter Title"
+          
+        ></textarea>
+        </div>
+    
+        
+        <div class="form-group">
+            Date
+        <input type="number" placeholder="Year is optional" min="1900" max="2021" class="form-control" formControlName='releaseDate'>
+          
+ 
+        </div>
+
+        <div class="form-group">
+          Page
+          <input type="number" placeholder="Page number is optional"class="form-control" formControlName='page'>
+        
+
+        </div>
+
+        <div class="form-group">
+          Type
+          <select formControlName="type" type="text" class="form-control">
+          <option value="">Not selected</option>
+          <option value="movie">movie</option>
+          <option value="series">series</option>
+          <option value="episode">episode</option>
+          <option value="game">game</option>
+          </select>
+        
+
+        </div>
+
+        <h5>{{this.errorMessage}}</h5>
+ 
+        <div class="buttons justify-end">
+          <input type = "submit" value = "Search " class="btn btn-primary" [disabled]="movieSearchForm.invalid">
+        </div>
+    
+      </form>
+      <div class="container-fluid sm-p-l-5 p-t-10">
+        <div class="ticket-manager">   
+          <div class="list">
+           
+            <div class="row" *ngIf="movies.Search">
+
+              <div *ngFor="let movie of movies.Search">
+              
+                <div class="card" style="width:330px">
+                  <img class="card-img-top" src="{{movie.Poster}}" alt="Card image">
+                  <div class="card-body">
+                    <h4 class="card-title">{{movie.Title}}</h4>
+                    <h5 class="card-text">{{movie.Type}}</h5>
+                    <p class="card-text">{{movie.Year}}</p>
+                    
+                    
+                  </div>
+                </div>
+
+            </div>
+
+            </div>
+            
+
+            <!-- <div class="list-item">
+              <div class="list-child">Raf alanlarında ki düzensizlik</div>
+              <div class="list-child">Emrah Uslu</div>
+              <div class="list-child">25.08.2019</div>
+              <div class="list-child">Yasin Çilekci</div>
+              <div class="list-child">Açık</div>
+              <div class="list-child">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a href="#" class="dropdown-item" data-target="#detail" data-toggle="modal">İncele</a>
+                  <a href="#" class="dropdown-item" data-target="#assignToMe" data-toggle="modal">Üzerine Al</a>
+                  <a href="#" class="dropdown-item" data-target="#assignTo" data-toggle="modal">Birine Ata</a>
+                  <a href="#" class="dropdown-item" data-target="#solve" data-toggle="modal">Çöz</a>
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="list-child">Raf alanlarında ki düzensizlik</div>
+              <div class="list-child">Emrah Uslu</div>
+              <div class="list-child">25.08.2019</div>
+              <div class="list-child">Yasin Çilekci</div>
+              <div class="list-child">Açık</div>
+              <div class="list-child">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  href=""><i class="fas fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <button class="dropdown-item" type="button">İncele</button>
+                  <button class="dropdown-item" type="button">Üzerine Al</button>
+                  <button class="dropdown-item" type="button">Birine Ata</button>
+                  <button class="dropdown-item" type="button">Çöz</button>
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="list-child">Raf alanlarında ki düzensizlik</div>
+              <div class="list-child">Emrah Uslu</div>
+              <div class="list-child">25.08.2019</div>
+              <div class="list-child">Yasin Çilekci</div>
+              <div class="list-child">Açık</div>
+              <div class="list-child">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  href=""><i class="fas fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <button class="dropdown-item" type="button">İncele</button>
+                  <button class="dropdown-item" type="button">Üzerine Al</button>
+                  <button class="dropdown-item" type="button">Birine Ata</button>
+                  <button class="dropdown-item" type="button">Çöz</button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <!-- -->
+      </div>
+      <!-- END CONTAINER FLUID -->
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>

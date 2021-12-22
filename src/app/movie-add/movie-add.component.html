@@ -1,0 +1,41 @@
+<form [formGroup]='movieAddForm' (ngSubmit)="onClickSubmit()" >
+
+
+    <div class="form-group">
+
+        Title
+        <textarea type="text"  class="form-control" formControlName='title' placeholder="Please Enter Title"
+      
+    ></textarea>
+    </div>
+
+    
+    <div class="form-group">
+        Date
+    <input type="date"  class="form-control" formControlName='releaseDate' placeholder="Please Enter Title">
+      
+   
+
+</div>
+
+<div class="form-group">
+    Score
+    <textarea type="text"  class="form-control" formControlName='score' placeholder="Please Enter Score"
+      
+    ></textarea>
+
+</div>
+
+    <!-- <div style="color:red;font-size: 12px;" class="invalid-feedback" *ngIf="movieAddForm.get('content').hasError('required')  ">
+      Lütfen yorum giriniz
+    </div>
+
+    <div style="color:red;font-size: 12px;" class="invalid-feedback" *ngIf="movieAddForm.get('content').hasError('minlength')  ">
+      Yorum en az 5 karakterden oluşmalıdır
+    </div> -->
+
+    <div class="buttons justify-end">
+      <input type = "submit" value = "Add " class="btn btn-primary" [disabled]="movieAddForm.invalid">
+    </div>
+
+  </form>

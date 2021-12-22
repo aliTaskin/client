@@ -1,0 +1,11 @@
+
+<app-sidebar *ngIf="tokenHelperService.IsLoggedIn"></app-sidebar>
+
+<div class="page-container ">
+
+  <app-header *ngIf="tokenHelperService.IsLoggedIn"></app-header>
+
+  <router-outlet></router-outlet>
+
+</div>
+
